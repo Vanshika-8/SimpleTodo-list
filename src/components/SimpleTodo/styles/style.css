@@ -1,0 +1,228 @@
+:root{
+    --background-color:#EF8768;
+    --button-hover:#F19C96;
+    --day-color:#F08E68;
+    --date-color:#F29C7A;
+    --container-background:#F7F7F7;
+    --delete-button:#EB4D35;
+    --checkbox-color:#2296F3;
+    --inactive-color:#B3B3B3;
+    --inacive-backgroud:#F0F0F0;
+  }
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+    
+    body {
+      line-height: 1.2;
+      height: 90%;
+      min-height: 100vh;
+      background-color:var(--background-color);
+      font-family: 'Montserrat', sans-serif;
+      display: grid;
+      place-items: center;
+    }
+    
+    button:hover {
+      cursor: pointer;
+      background-color:var(--button-hover);
+    }
+    
+    ul {
+      list-style-type: none; 
+    }
+    
+   
+    .container {
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background-color: #F7F7F7;
+      padding: 2em;
+      overflow: hidden;
+    }
+    
+  
+  .list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    justify-content: space-around;
+    width:350px;
+   
+    padding-top:20px
+    }
+  
+  
+  .logo{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 2px solid lightgrey;
+    
+  }
+    .searchList,
+    .todoList{
+      width:100%;
+    height:100%;
+    padding: 15px;
+    }
+  
+    .todo-form {
+      margin: 20px 20px;
+      width: 100%;
+      margin-top:2em;
+      position: relative;
+      display: flex;
+      text-align: left;
+    }
+    
+    .todo-input {
+      width:11em;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      padding: 5px;
+      font-size: 1.5rem;
+      justify-self: start;
+      border: 3px solid #d7d7d7;
+    }
+    
+    .todo-items {
+      align-self: start;
+      width: 100%;
+      padding: 0px;
+    }
+    
+    
+    .item {
+      padding: 10px;
+      font-size: 1.5em;
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      align-items: baseline;
+      line-height: 0.1em;
+    }
+    
+    .container {
+      border-radius: 20px;
+      height: 70vh;
+    }
+    .container #year{
+      text-align: left;
+      padding: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .checkbox {
+      margin-right: 6em;
+      color:var(--checkbox-color);
+      border-radius: 2px;
+      align-items:initial;
+    }
+    
+    .delete-button {
+        /* float: right; */
+        color: var(--delete-button);
+        background: none;
+        border: none;
+        outline: none;
+        border-radius: 7px;
+        padding: 2px 5px;
+        margin-left: 5em;
+        font-size: 1.1rem;
+        font-weight: 550;
+    }
+  
+  img{
+    width: 41px;
+    height: 100%;
+    border: none;
+    outline:none;
+  }
+  
+  .add-button{
+    border: none;
+    background: none;
+    position: absolute;
+     right: 5em;
+     top: -2px;
+  }
+  
+    .add-button:hover
+    {
+      background-color:lightgreen;
+    }
+   
+    .checked { 
+      text-decoration: line-through;
+    }
+    
+  
+    .container #day , #date{
+      color:var(--background-color);
+      
+    }
+    
+   .container #year{
+     color:lightgrey;
+   }
+    
+  
+  
+  #day , #date{
+    font-size:300%;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .todoList,
+  .searchList{
+    color:var(--inactive-color);
+    cursor: pointer;
+  }
+  .active-color{
+    color:var(--background-color);
+  }
+  
+  
+  .inactive-color{
+    background-color:var(--inacive-backgroud);
+    color:var(--inactive-color)
+  
+  }
+  
+  .todo-input::placeholder{
+    font-size: 1rem;
+  }
+   
+  .total-tasks,
+  .completed-tasks{
+    font-weight:600;
+  }
+  
+  .searchTask{
+    padding: 10px;
+      border-radius: 10px;
+      width:100%;
+       border:none;
+       outline:none;
+    }
+      
+  
+  .searchWrapper{
+    display: flex;
+      justify-content: center;
+      margin-top: 2em;
+  border-color:var(--inacive-backgroud);
+  
+  }
