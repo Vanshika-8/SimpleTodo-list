@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const TodoDate=(props)=>{
+export const TodoDate=(props)=>{
  const dataObject=new Date()
  const showcurrentDay=dataObject.toLocaleString('default',{weekday:'long'})
  const showcurrentDate=dataObject.getDate()
@@ -15,7 +15,7 @@ const TodoDate=(props)=>{
 
     return(
         <div id="date">{dateObj}
-        <button style={{width:'24em'}} onClick={timeZoneHandler}>Current Time-Zone</button>
+        <button className="btn__timezone" onClick={timeZoneHandler}>Current Time-Zone</button>
         </div>
        
  )
@@ -23,5 +23,4 @@ const TodoDate=(props)=>{
 
 }
 
-
-export default TodoDate;
+ 
