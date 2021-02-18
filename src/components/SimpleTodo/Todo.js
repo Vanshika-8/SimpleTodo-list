@@ -6,8 +6,9 @@ import './styles/style.css'
 
 const Todo =(props) => {
     return (
-      <div className="todo-items">
-        <ul className="item">
+       <div className="todo-items">
+      
+      <ul className="item">
      <li style={{
             textDecoration:props.todo.complete ? 'line-through' : ''
         }} > <input className="checkbox" type="checkbox" onClick={props.toggleHandler}/> 

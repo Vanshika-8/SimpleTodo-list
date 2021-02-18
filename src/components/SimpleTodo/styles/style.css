@@ -131,14 +131,14 @@
     }
     
     .delete-button {
-        /* float: right; */
+        float: right;
         color: var(--delete-button);
         background: none;
         border: none;
         outline: none;
         border-radius: 7px;
         padding: 2px 5px;
-        margin-left: 5em;
+        margin-left: 6em;
         font-size: 1.1rem;
         font-weight: 550;
     }
@@ -180,7 +180,7 @@
   
   
   #day , #date{
-    font-size:300%;
+    font-size:200%;
     text-align: left;
     padding: 10px;
   }

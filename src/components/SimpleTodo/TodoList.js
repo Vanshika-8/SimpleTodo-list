@@ -2,6 +2,7 @@
 import React from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
+import TodoDate from './TodoDate';
 
 
 export default class TodoList extends React.Component {
@@ -13,6 +14,7 @@ export default class TodoList extends React.Component {
     this.setState({
       todos: newTodos
     })
+   
   }
   toggleHandler = (id) => {
     this.setState({
@@ -40,7 +42,17 @@ export default class TodoList extends React.Component {
 
   render() {
     return (
-      <div className="container">
+       <div className="container">
+       <TodoDate />
+      <div className="list">
+      <div className="total-tasks">
+        Total Tasks: {this.state.todos.filter(todo=>!todo.complete).length}
+      </div>
+    
+    <div className="completed-tasks">
+      Completed Tasks: {this.state.todos.filter(todo=>todo.complete).length}
+    </div>
+     </div>
         {this.state.todos.map(todo => (
 
           <Todo className='item' key={todo.id}
@@ -50,7 +62,7 @@ export default class TodoList extends React.Component {
 
         ))}
         <TodoForm onSubmit={this.addTodo} />
-
+        
       </div>
 
     )
