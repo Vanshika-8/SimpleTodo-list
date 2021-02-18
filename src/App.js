@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TodoList from './components/SimpleTodo/TodoList';
 import TodoDate from './components/SimpleTodo/TodoDate';
+import TrialBasis from './components/Teaching';
 
 
 
@@ -11,7 +12,7 @@ class App extends Component {
       <div >
      
      <TodoList/>
- 
+ <TrialBasis/>
    </div>
     );
   }
