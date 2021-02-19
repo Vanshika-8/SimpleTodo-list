@@ -2,43 +2,52 @@
 import React from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
-import TodoDate from './TodoDate';
-
+import {TodoDate} from './TodoDate';
+import {store} from '../../utilities/store';
 
 export default class TodoList extends React.Component {
   state = {
     todos: []
   }
   addTodo = (todo) => {
-    const newTodos = [todo, ...this.state.todos]
-    this.setState({
-      todos: newTodos
-    })
-   
-  }
-  toggleHandler = (id) => {
-    this.setState({
-      todos: this.state.todos.map(todo => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            complete: !todo.complete
-          }
+    const todos=store.get('todos')
+    const newTodos = [todo, ...todos]
+    console.log(newTodos)
+     store.save('todos', newTodos)
+     this.setState({
+       todos:newTodos
+     })
+    }
 
-        } else {
-          return todo
+
+  toggleHandler = (id) => {
+    const todos=store.get('todos')
+    const changeTodos=todos.map(todo => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          complete: !todo.complete
         }
-      })
+
+      } else {
+        return todo
+      }
+
+    })
+    store.save('todos',changeTodos)
+    this.setState({
+      todos: changeTodos
     })
 
   }
 
   deleteHandler = (id) => {
-    this.setState({
-      todos:this.state.todos.filter(todo=>todo.id !== id)
-    })
-
-  }
+     const filtered=this.state.todos.filter(todo=>todo.id !== id)
+     this.setState({
+      todos:filtered
+       })
+       store.save('todos',filtered)
+     }
 
   render() {
     return (
@@ -58,7 +67,9 @@ export default class TodoList extends React.Component {
           <Todo className='item' key={todo.id}
             toggleHandler={() => this.toggleHandler(todo.id)}
             deleteHandler={() => this.deleteHandler(todo.id)}
-            todo={todo}></Todo>
+            todo={todo}>
+            
+            </Todo>
 
         ))}
         <TodoForm onSubmit={this.addTodo} />
